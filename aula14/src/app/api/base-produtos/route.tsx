@@ -6,3 +6,10 @@ export async function GET() {
     const dados = JSON.parse(file);
     return NextResponse.json(dados);
 }
+
+export async function POST(request : Request) {
+    const {nome, idade} = await request.json();
+    console.log(nome, idade);
+    return NextResponse.json({msg: "SUCESSO",},{status: 201})
+    
+}
